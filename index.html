@@ -9,4 +9,12 @@
   <body>
     <h1>Service Worker Demo</h1>
   </body>
+  <script>
+    // 在html里注册service-worker
+    if (navigator.serviceWorker != null) {
+      navigator.serviceWorker.register('./sw.js', { scope: './sw-demo/' }).then(function (registration) {
+        console.log('Registered events at scope: ', registration.scope)
+      })
+    }
+  </script>
 </html>
